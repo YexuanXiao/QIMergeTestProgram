@@ -1,0 +1,65 @@
+namespace TestWinRT
+{
+    interface ITestInterfaceA
+    {
+        Int32 MethodA1(Int32 x);
+        Int32 MethodA2(Int32 x);
+        Int32 MethodA3(Int32 x, Int32 y);
+        Int32 MethodA4(Int32 x, Int32 y, Int32 z);
+    }
+
+    interface ITestInterfaceB
+    {
+        Int32 MethodB1(Int32 x);
+        Int32 MethodB2(Int32 x);
+        Int32 MethodB3();
+        Int32 MethodB4(Int32 x, Int32 y, Int32 z, Int32 w);
+    }
+
+    interface ITestInterfaceC
+    {
+        Int32 MethodC1(Int32 x);
+        Int32 MethodC2(Int32 x, Int32 y);
+    }
+
+    interface ITestInterfaceD
+    {
+        Int32 MethodD1(Int32 x);
+        Int32 MethodD2(Object obj);
+        Int32 MethodD3(Int32 x, Object obj);
+    }
+
+    interface ITestInterfaceE
+    {
+        String MethodE1(String s);
+        String MethodE2(String s);
+    }
+
+    [version(1.0)]
+    runtimeclass TestRuntimeClass
+    {
+        [default] interface ITestInterfaceA;
+        interface ITestInterfaceB;
+        interface ITestInterfaceC;
+        interface ITestInterfaceD;
+        interface ITestInterfaceE;
+    }
+
+    interface IQI
+    {
+        void DoQI();
+    }
+
+    interface IDirect
+    {
+        void DoDirect();
+    }
+
+    [version(1.0)]
+    runtimeclass TestPerf
+    {
+        [default] interface IDirect;
+        interface IQI;
+    }
+}
+

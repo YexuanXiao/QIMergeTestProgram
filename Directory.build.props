@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <LLVMInstallDir>C:\clang</LLVMInstallDir>
+    <LLVMToolsVersion>23</LLVMToolsVersion>
+  </PropertyGroup>
+</Project>
